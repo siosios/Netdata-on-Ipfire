@@ -1,2 +1,2 @@
 # Netdata-on-Ipfire
-Build scripts for netdata to create an ipfire package
+Build scripts for Ipfire to create a Netdata package
