@@ -18,7 +18,7 @@ you should come back to a complete build with no errors and you'll find the netd
 
 from there you can upload and install on your ipfire machine
 
-All files will be in /opt/netdata except logrotate and the netdata init.d script, the reason for opt was the normal install was wreaking havic on the file system and would not install properly and sometimes finish the build proccess due to tar errors
+All files will be in /opt/netdata except logrotate and the netdata init.d script, the reason for opt was the normal install was wreaking havic on the file system and would not install properly and sometimes not finish the build proccess due to tar errors
 
 
 
