@@ -8,7 +8,7 @@ Next install Dnsmasq onto the system you loaded your build enviroment onto.
 
 Then place the files from this repository into the folders withing the ipfire-2.x folder. here is a tutorial for building packages https://wiki.ipfire.org/devel/ipfire-2-x/addon-howto
 
-you can then run make.sh build to build all the packages and ipfire, this will take some time so go eat dinner.
+After you add 'lfsmake2 netdata' to the make.sh file as the last line of the buildipfire() {, you can then run make.sh build to build all the packages and ipfire, this will take some time so go eat dinner.
 
 you should come back to a complete build with no errors and you'll find the netdata-1.33.0-1.ipfire package in /ipfire-2.x/packages/
 
