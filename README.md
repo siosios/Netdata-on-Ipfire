@@ -3,8 +3,10 @@ Build scripts for Ipfire to create a Netdata package (thanks to ipfire and ummee
 
 
 First setup your build enviroment per the instructions at https://wiki.ipfire.org/devel/ipfire-2-x/build-howto, you should end up with a folder called ipfire-2.x
+
 Next install Dnsmasq onto the system you loaded your build enviroment onto.
-Then place the files from this repository into the folders withing the ipfire-2.x folder.
+
+Then place the files from this repository into the folders withing the ipfire-2.x folder. here is a tutorial for building packages https://wiki.ipfire.org/devel/ipfire-2-x/addon-howto
 
 you can then run make.sh build to build all the packages and ipfire, this will take some time so go eat dinner.
 
