@@ -22,3 +22,6 @@ I worked on this as a learning experiance, my first attempts were manual builds 
 
 
 enjoy
+
+
+ps: you can update the url and md5sum in the lfs/netdata file to a newer package and rebuild to keep up to date
