@@ -1,5 +1,5 @@
 # Netdata-on-Ipfire
-Build scripts for Ipfire to create a Netdata package (thanks to ipfire and ummeegge - the original creator)
+Build scripts for Ipfire to create a Netdata package (thanks to ummeegge - the original creator)
 
 
 First setup your build enviroment per the instructions at https://wiki.ipfire.org/devel/ipfire-2-x/build-howto, you should end up with a folder called ipfire-2.x
@@ -13,6 +13,8 @@ Then place the files from this repository into the folders withing the ipfire-2.
 
 
 After you add 'lfsmake2 netdata' to the make.sh file as the last line of the buildipfire() {, you can then run make.sh build to build all the packages and ipfire, this will take some time so go eat dinner.
+
+I suggest reading the how to build an addon from rhis point and then continue readimg.
 
 you should come back to a complete build with no errors and you'll find the netdata-1.33.0-1.ipfire package in /ipfire-2.x/packages/
 
