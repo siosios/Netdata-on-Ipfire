@@ -28,7 +28,7 @@ VER        = 1.33.0
 
 THISAPP    = netdata-v$(VER)
 DL_FILE    = $(THISAPP).tar.gz
-DL_FROM    = https://github.com/netdata/netdata/releases/download/v1.33.0/netdata-v1.33.0.tar.gz
+DL_FROM    = https://github.com/netdata/netdata/releases/download/v1.33.0
 DIR_APP    = $(DIR_SRC)/$(THISAPP)
 TARGET     = $(DIR_INFO)/$(THISAPP)
 PROG       = netdata
