@@ -31,4 +31,4 @@ I worked on this as a learning experiance, my first attempts were manual builds 
 enjoy
 
 
-ps: you can update the url and md5sum in the lfs/netdata file to a newer package and rebuild to keep up to date
+update: downloading netdata directly from github throws an error that i havent figured out yet and ipfire is using BLAKE2 now so b2sum would give you the hash for the netdata tar file.
