@@ -25,9 +25,13 @@ All files will be in /opt/netdata except logrotate and the netdata init.d script
 
 ### Installation of the packaged app
 cd /opt/pakfire/tmp
+
 wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/netdata-1.38.0-1.ipfire
+
 tar xvf netdata-1.38.0-1.ipfire
+
 ./install.sh or ./update.sh
+
 
 
 I worked on this as a learning experiance, my first attempts were manual builds in the shell and then run the build proccess to create the ipfire package.
