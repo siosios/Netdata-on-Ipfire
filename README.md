@@ -24,18 +24,14 @@ All files will be in /opt/netdata except logrotate and the netdata init.d script
 
 
 ### Installation of the packaged app
-cd /opt/pakfire/tmp
-wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/netdata-1.38.0-1.ipfire
-tar xvf netdata-1.38.0-1.ipfire
-./install.sh or ./update.sh
+  cd /opt/pakfire/tmp
+  wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/netdata-1.38.0-1.ipfire
+  tar xvf netdata-1.38.0-1.ipfire
+  ./install.sh or ./update.sh
 
 
 
 I worked on this as a learning experiance, my first attempts were manual builds in the shell and then run the build proccess to create the ipfire package.
 
-
-
 enjoy
 
-
-update: downloading netdata directly from github throws an error that i havent figured out yet and ipfire is using BLAKE2 now so b2sum would give you the hash for the netdata tar file.
