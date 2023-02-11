@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# Begin $rc_base/init.d/netdata
+
+# Description:
+# Netdata is distributed, real-time, performance and health monitoring for systems and applications. 
+# It is a highly optimized monitoring agent you install on all your systems and containers.
+
+# $Created by: ummeegge ipfire org
+# $Date: 2019-18-30 05:31:19 -0500 (Thu, 28 Mar 2019) $
+
+. /etc/sysconfig/rc
+. $rc_functions
+
+DESC="real-time performance and health monitoring"
+NAME="netdata"
+PID="/opt/netdata/var/run/${NAME}.pid"
+BIN="/opt/netdata/usr/sbin/${NAME}"
+WEBIP=$(awk -F= '/GREEN_ADDRESS/ { print $2 }' /var/ipfire/ethernet/settings)
+#WEBIP="127.0.0.1"
+CONF="/opt/netdata/etc/netdata/netdata.conf"
+PORT="19999"
+USER="netdata"
+ARGS="-D -c ${CONF} -i ${WEBIP} -p ${PORT} -P ${PID}"
+
+[ -x ${BIN} ] || exit 1
+
+case "$1" in
+	start)
+		boot_mesg "Starting ${DESC}..."
+		loadproc ${BIN} ${ARGS} &
+		;;
+
+	stop)
+		boot_mesg "Stopping ${DESC}..."
+		killproc ${BIN}
+		rm -f ${PID}
+		;;
+
+	restart)
+		$0 stop
+		sleep 1
+		$0 start
+		;;
+
+	status)
+		statusproc ${NAME}
+		;;
+
+	*)
+		echo "Usage: $0 {start|stop|restart|status}"
+		exit 1
+		;;
+esac
+
+# EOF
+
