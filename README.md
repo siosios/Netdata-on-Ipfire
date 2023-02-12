@@ -22,6 +22,7 @@ from there you can upload and install on your ipfire machine
 
 All files will be in /opt/netdata except logrotate and the netdata init.d script, the reason for opt was the normal install was wreaking havic on the file system and would not install properly and sometimes not finish the build proccess due to tar errors.
 
+###The internal update won’t work since you can’t compile it, Ipfire does not have the tools installed to do it.
 
 ### Installation of the packaged app
   cd /opt/pakfire/tmp
