@@ -1,41 +1,67 @@
 # Netdata-on-Ipfire
-Build scripts for Ipfire to create a Netdata package (thanks to ummeegge - the original creator)
 
+Build scripts for [IPFire](https://www.ipfire.org/) to create a [Netdata](https://www.netdata.cloud/) package (_thanks to [ummeegge](https://community.ipfire.org/u/ummeegge) - the original creator_)
 
-First setup your build enviroment per the instructions at https://wiki.ipfire.org/devel/ipfire-2-x/build-howto, you should end up with a folder called ipfire-2.x
+## Content <!-- omit from toc -->
 
-Next install Dnsmasq onto the system you loaded your build enviroment onto ( if needed ).
+* [Netdata-on-Ipfire](#netdata-on-ipfire)
+  * [Install / Update](#install--update)
+  * [Build](#build)
+  * [Side note](#side-note)
+  * [Author](#author)
 
-Then place the files from this repository into the folders withing the ipfire-2.x folder. here is a tutorial for building packages https://wiki.ipfire.org/devel/ipfire-2-x/addon-howto
+## Install / Update
 
+Simply run the following commands:
 
-![makesh](https://user-images.githubusercontent.com/135543/153519689-1e02c1aa-c82e-45ce-994a-9993a288535a.png)
+* For IPFire core 172:
 
+  ```console
+  # cd /opt/pakfire/tmp
+  # wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/core%20172/netdata-1.38.1-1.ipfire
+  # tar xvf netdata-1.38.1-1.ipfire
+  # ./install.sh
+  ```
 
-After you add 'lfsmake2 netdata' to the make.sh file as the last line of the buildipfire() {, you can then run make.sh build to build all the packages and ipfire, this will take some time so go eat dinner.
+* For IPFire core 173:
 
-I suggest reading the how to build an addon from this point and then continue reading.
+  ```console
+  # cd /opt/pakfire/tmp
+  # wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/core%20173/netdata-1.38.1-1.ipfire
+  # tar xvf netdata-1.38.1-1.ipfire
+  # ./install.sh
+  ```
 
-you should come back to a complete build with no errors and you'll find the netdata-1.33.0-1.ipfire package in /ipfire-2.x/packages/
+To update your existing installation, simply run the __`update.sh`__ script instead of `install.sh`.
 
-from there you can upload and install on your ipfire machine
+## Build
 
-All files will be in /opt/netdata except logrotate and the netdata init.d script, the reason for opt was the normal install was wreaking havic on the file system and would not install properly and sometimes not finish the build proccess due to tar errors.
+1. First setup your build enviroment per the instructions at https://wiki.ipfire.org/devel/ipfire-2-x/build-howto, you should end up with a folder called ipfire-2.x
+2. Next install Dnsmasq onto the system you loaded your build enviroment onto ( if needed ).
+3. Then place the files from this repository into the folders withing the ipfire-2.x folder. here is a tutorial for building packages https://wiki.ipfire.org/devel/ipfire-2-x/addon-howto
 
-### The internal update won’t work since you can’t compile it, Ipfire does not have the tools installed to do it.
+    ![makesh](https://user-images.githubusercontent.com/135543/153519689-1e02c1aa-c82e-45ce-994a-9993a288535a.png)
 
-### Installation of the packaged app
-  cd /opt/pakfire/tmp
-  
-  wget https://github.com/siosios/Netdata-on-Ipfire/raw/main/core%20172/netdata-1.38.0-1.ipfire
-  
-  tar xvf netdata-1.38.0-1.ipfire
-  
-  ./install.sh or ./update.sh
+After you add `lfsmake2 netdata` to the `make.sh` file as the last line of the `buildipfire() {}` block, you can then run `make.sh` script to build all the packages and ipfire, this will take some time so go eat dinner.
 
+> I suggest reading the how to build an addon from this point and then continue reading.
 
+Once finished, you should get a complete build with no errors and you'll find the `netdata-[version].ipfire` package in `/ipfire-2.x/packages/` folder.
 
-I worked on this as a learning experiance, my first attempts were manual builds in the shell and then run the build proccess to create the ipfire package.
+From there you can upload and install the package on your ipfire machine.
 
-enjoy
+All files will be installed in the `/opt/netdata` folder except `logrotate` and the netdata `init.d` script.
 
+> The reason for opt was the normal install was wreaking havoc on the file system and would not install properly and sometimes not finish the build proccess due to tar errors.
+
+__The internal update won't work since you can't compile it, Ipfire does not have the tools installed to do it.__
+
+## Side note
+
+I worked on this as a learning experience, my first attempts were manual builds in the shell and then run the build proccess to create the ipfire package.
+
+Enjoy!
+
+## Author
+
+* [siosios](https://community.ipfire.org/u/siosios)
