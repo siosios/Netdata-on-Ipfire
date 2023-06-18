@@ -1,0 +1,5 @@
+    $subipfire->{'NetData'} = {'caption' => Netdata,
+				  'uri' => '/cgi-bin/external.cgi?netdata',
+				  'title' => NetData,
+				  'enabled' => 1,
+				  };
